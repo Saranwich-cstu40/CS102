@@ -1,24 +1,26 @@
 #include <stdio.h>
 
 void readSquare(int matrix[8][8], int N){
-    for (int i = 0; i < N; i++){
-        for (int j = 0; j < N; j++){
+    int i,j;
+    for (i = 0; i < N; i++){
+        for (j = 0; j < N; j++){
             scanf("%d", &matrix[i][j]);
         }
     }
 }
 
 int findMagicNumber(int matrix[8][8], int N){
+    int i,j;
     int magic_constant = 0;
-    for (int j = 0; j < N; j++){
+    for (j = 0; j < N; j++){
         magic_constant += matrix[0][j];
     }
     
     // Check rows
-    for (int i = 0; i < N; i++)
+    for (i = 0; i < N; i++)
     {
         int row_sum = 0;
-        for (int j = 0; j < N; j++)
+        for (j = 0; j < N; j++)
         {
             row_sum += matrix[i][j];
         }
@@ -29,10 +31,10 @@ int findMagicNumber(int matrix[8][8], int N){
     }
 
     // Check columns
-    for (int j = 0; j < N; j++)
+    for (j = 0; j < N; j++)
     {
         int col_sum = 0;
-        for (int i = 0; i < N; i++)
+        for (i = 0; i < N; i++)
         {
             col_sum += matrix[i][j];
         }
@@ -44,7 +46,7 @@ int findMagicNumber(int matrix[8][8], int N){
 
     // Check diagonal
     int diag_sum = 0;
-    for (int i = 0; i < N; i++)
+    for (i = 0; i < N; i++)
     {
         diag_sum += matrix[i][i];
     }
@@ -55,7 +57,7 @@ int findMagicNumber(int matrix[8][8], int N){
 
     // cheack 2nd diagonal
     diag_sum = 0;
-    for (int i = 0; i < N; i++)
+    for (i = 0; i < N; i++)
     {
         diag_sum += matrix[i][N - 1 - i];
     }

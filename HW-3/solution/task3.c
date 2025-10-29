@@ -1,12 +1,13 @@
 #include <stdio.h>
 
 int ismagicsquare(int matrix[8][8], int N, int magic_constant)
-{
+{   
+    int i,j;
     // Check rows
-    for (int i = 0; i < N; i++)
+    for (i = 0; i < N; i++)
     {
         int row_sum = 0;
-        for (int j = 0; j < N; j++)
+        for (j = 0; j < N; j++)
         {
             row_sum += matrix[i][j];
         }
@@ -17,10 +18,10 @@ int ismagicsquare(int matrix[8][8], int N, int magic_constant)
     }
 
     // Check columns
-    for (int j = 0; j < N; j++)
+    for (j = 0; j < N; j++)
     {
         int col_sum = 0;
-        for (int i = 0; i < N; i++)
+        for (i = 0; i < N; i++)
         {
             col_sum += matrix[i][j];
         }
@@ -32,7 +33,7 @@ int ismagicsquare(int matrix[8][8], int N, int magic_constant)
 
     // Check diagonal
     int diag_sum = 0;
-    for (int i = 0; i < N; i++)
+    for (i = 0; i < N; i++)
     {
         diag_sum += matrix[i][i];
     }
@@ -43,7 +44,7 @@ int ismagicsquare(int matrix[8][8], int N, int magic_constant)
 
     // cheack 2nd diagonal
     diag_sum = 0;
-    for (int i = 0; i < N; i++)
+    for (i = 0; i < N; i++)
     {
         diag_sum += matrix[i][N - 1 - i];
     }
@@ -57,19 +58,19 @@ int ismagicsquare(int matrix[8][8], int N, int magic_constant)
 
 int main()
 {
-    int N;
+    int N,i,j;
     scanf("%d", &N);
     int matrix[8][8];
     int magic_constant = 0;
-    for (int i = 0; i < N; i++)
+    for (i = 0; i < N; i++)
     {
-        for (int j = 0; j < N; j++)
+        for (j = 0; j < N; j++)
         {
             scanf("%d", &matrix[i][j]);
         }
     }
 
-    for (int j = 0; j < N; j++)
+    for (j = 0; j < N; j++)
     {
         magic_constant += matrix[0][j];
     }
