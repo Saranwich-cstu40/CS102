@@ -4,7 +4,7 @@ int main (){
     int N;
     scanf("%d", &N);
     float values[20];
-    int i ;
+    int i,j ;
     float *min = &values[0];
     float *max = &values[0];
     int min_index = 0;
@@ -39,7 +39,7 @@ int main (){
     }
     printf("\nNegative coordinates:");
     for (i = 0; i + 1 < N; i += 1) {
-        for (int j = i + 1; j < N; j += 1) {
+        for (j = i + 1; j < N; j += 1) {
             if (*(values + i) < 0 && *(values + j) < 0) {
                 printf(" (%.2f, %.2f),", *(values + i), *(values + j));
             }
