@@ -1,5 +1,9 @@
 #include <stdio.h>
 
+// Question 5 of Homework 3 (CS102 HW3 1/2567)
+// Your program will not successfully be compiled and run properly until readSquare and findMagicNumber functions are defined correctly.
+// Let's define readSquare and findMagicNumber functions here !
+
 void readSquare(int matrix[8][8], int N){
     int i,j;
     for (i = 0; i < N; i++){
@@ -69,18 +73,21 @@ int findMagicNumber(int matrix[8][8], int N){
     return magic_constant;
 }
 
-int main (){
+int main(){
+
+    int arr[8][8];
     int N;
-    int matrix[8][8];
-    int magic_number; 
+
     scanf("%d", &N);
-    readSquare(matrix, N);
-    magic_number = findMagicNumber(matrix, N);
-    if (magic_number == -1){
+    readSquare(arr, N);
+
+    int magicNumber = findMagicNumber(arr, N);
+
+    if (magicNumber == -1) {
         printf("Your square is NOT a magic square.");
+    } else {
+        printf("Your square is a magic square!! with the magic constant = %d.", magicNumber);
     }
-    else {
-        printf("Your square is a magic square!! with the magic constant = %d.",magic_number);
-    }
+
     return 0;
 }
